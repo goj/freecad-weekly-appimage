@@ -4,9 +4,9 @@ let
   appimageContents = appimageTools.extract {
     inherit pname version src;
     postExtract = ''
-      # Configure XKB config root and allow native Wayland with X11 fallback
+      # Configure XKB config root, host OpenGL/EGL driver paths, and enable Wayland
       substituteInPlace $out/AppRun \
-        --replace-fail '# export QT_XKB_CONFIG_ROOT=''${HERE}/usr/lib' 'export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb; export XKB_CONFIG_ROOT=/usr/share/X11/xkb' \
+        --replace-fail '# export QT_XKB_CONFIG_ROOT=''${HERE}/usr/lib' 'export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb; export XKB_CONFIG_ROOT=/usr/share/X11/xkb; export __EGL_VENDOR_LIBRARY_DIRS=/run/opengl-driver/share/glvnd/egl_vendor.d''${__EGL_VENDOR_LIBRARY_DIRS:+:''$__EGL_VENDOR_LIBRARY_DIRS}; export LIBGL_DRIVERS_PATH=/run/opengl-driver/lib/dri''${LIBGL_DRIVERS_PATH:+:''$LIBGL_DRIVERS_PATH}' \
         --replace-fail 'export QT_QPA_PLATFORM=xcb' ': "''${QT_QPA_PLATFORM:=wayland;xcb}"; export QT_QPA_PLATFORM'
     '';
   };
