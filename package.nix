@@ -16,16 +16,17 @@ appimageTools.wrapAppImage {
   contents = appimageContents;
 
   extraInstallCommands = ''
-    # Symlink primary binary as freecad
+    # Symlink primary binary as freecad and FreeCAD (for launchers expecting capitalized name)
     ln -s $out/bin/${pname} $out/bin/freecad
+    ln -s $out/bin/${pname} $out/bin/FreeCAD
 
     # Install desktop entry and icons
     install -m 444 -D ${appimageContents}/org.freecad.FreeCAD.desktop $out/share/applications/org.freecad.FreeCAD.desktop
     install -m 444 -D ${appimageContents}/org.freecad.FreeCAD.svg $out/share/icons/hicolor/scalable/apps/org.freecad.FreeCAD.svg
 
-    # Ensure desktop file points to the wrapped executable
+    # Ensure desktop file points to the wrapped executable without AppRun dash argument
     substituteInPlace $out/share/applications/org.freecad.FreeCAD.desktop \
-      --replace-fail "Exec=AppRun" "Exec=${pname}"
+      --replace-fail "Exec=AppRun - " "Exec=${pname} "
   '';
 
   meta = with lib; {
