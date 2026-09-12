@@ -3,10 +3,17 @@
 let
   appimageContents = appimageTools.extract {
     inherit pname version src;
+    postExtract = ''
+      # Configure XKB config root and allow native Wayland with X11 fallback
+      substituteInPlace $out/AppRun \
+        --replace-fail '# export QT_XKB_CONFIG_ROOT=''${HERE}/usr/lib' 'export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb; export XKB_CONFIG_ROOT=/usr/share/X11/xkb' \
+        --replace-fail 'export QT_QPA_PLATFORM=xcb' ': "''${QT_QPA_PLATFORM:=wayland;xcb}"; export QT_QPA_PLATFORM'
+    '';
   };
 in
-appimageTools.wrapType2 {
+appimageTools.wrapAppImage {
   inherit pname version src;
+  contents = appimageContents;
 
   extraInstallCommands = ''
     # Symlink primary binary as freecad
