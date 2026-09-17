@@ -21,25 +21,25 @@
     "freecad-appimage-aarch64": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-85wjby07ru6wwGp3JQKiajfBrobu2FCd4YVOlZL0XII=",
+        "narHash": "sha256-bQCVRE6d0yfpEkDBDXdNk4Dnv0saQU0bMTKq8r5T3kA=",
         "type": "file",
-        "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.09/FreeCAD_weekly-2026.09.09-Linux-aarch64.AppImage"
+        "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.16/FreeCAD_weekly-2026.09.16-Linux-aarch64.AppImage"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.09/FreeCAD_weekly-2026.09.09-Linux-aarch64.AppImage"
+        "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.16/FreeCAD_weekly-2026.09.16-Linux-aarch64.AppImage"
       }
     },
     "freecad-appimage-x86_64": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-p2JyO/fKY9WjI7n0Jq04zFWku373GMCT+husklJGg7Y=",
+        "narHash": "sha256-ovRvJ1vDdeTKZ5OUNCvlNo0heeNC3tryuS09lUuHiA4=",
         "type": "file",
-        "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.09/FreeCAD_weekly-2026.09.09-Linux-x86_64.AppImage"
+        "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.16/FreeCAD_weekly-2026.09.16-Linux-x86_64.AppImage"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.09/FreeCAD_weekly-2026.09.09-Linux-x86_64.AppImage"
+        "url": "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.16/FreeCAD_weekly-2026.09.16-Linux-x86_64.AppImage"
       }
     },
     "nixpkgs": {

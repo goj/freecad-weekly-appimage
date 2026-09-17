@@ -7,11 +7,11 @@
 
     # Upstream weekly AppImages (hashes automatically managed in flake.lock)
     freecad-appimage-x86_64 = {
-      url = "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.09/FreeCAD_weekly-2026.09.09-Linux-x86_64.AppImage";
+      url = "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.16/FreeCAD_weekly-2026.09.16-Linux-x86_64.AppImage";
       flake = false;
     };
     freecad-appimage-aarch64 = {
-      url = "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.09/FreeCAD_weekly-2026.09.09-Linux-aarch64.AppImage";
+      url = "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.09.16/FreeCAD_weekly-2026.09.16-Linux-aarch64.AppImage";
       flake = false;
     };
   };
@@ -27,7 +27,7 @@
             aarch64-linux = inputs.freecad-appimage-aarch64;
           };
 
-          version = "weekly-2026.09.09";
+          version = "weekly-2026.09.16";
 
           freecad = pkgs.callPackage ./package.nix {
             src = srcs.${system};
